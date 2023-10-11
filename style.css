@@ -112,7 +112,7 @@ que outros positions do elemento, como o do button, sejam relativos ao position 
     top: 50%;
     left: 0;
 
-    animation: TrackVolta 0.4s;
+    animation: TrackVolta 0.4s forwards;
 }
 
 .light #switch button{
@@ -120,7 +120,7 @@ que outros positions do elemento, como o do button, sejam relativos ao position 
     left: initial;*/
 
 /*Chamando o @keyframes e o tempo que ela vai demorar pra ser finalizada. O forwards serve para manter as propriedades finais do @keyframes, o to*/
-    animation: TrackIda 0.4s forwards;
+    animation: TrackIda 0.4s;
 }
 
 #switch button:hover{
@@ -238,19 +238,19 @@ em diferentes tamanhos de tela. Só funcionam quando há a tag de meta com atrib
 /**/
 @keyframes TrackIda{
     from{
-        left: 0;    /*Definindo onde a bolinha vai começar*/
+        left: 50%;    /*Definindo onde a bolinha vai começar*/
     } 
     to{
-        left: 50%;  /*Definindo onde a bolinha vai terminar*/
+        left: 0;  /*Definindo onde a bolinha vai terminar*/
     } 
 }
 
 /*Adicionando animação de volta para modo dark. Tambem temos que mudar o seletor #switch button{}*/
 @keyframes TrackVolta{
     from{
-        left: 50%;
+        left: 0;
     }
     to{
-        left: 0;
+        left: 50%;
     }
 }
