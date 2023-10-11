@@ -1,0 +1,86 @@
+<!-- ESTE É O ARQUIVO INICIAL. O QUE DEFINE QUE É UM ARQUIVO HTML É O .html NO FINAL DO ARQUIVO-->
+
+<!--Digitando ! e apertando enter o interpretador vai trazer uma prévia de uma pagina html-->
+
+<!DOCTYPE html> <!-- Definindo documento HTML5-->
+
+<html lang="pt-br" class = "light"> <!--A class light serve como estratégia para alterar o site do modo escuro para claro, tratado no css-->
+
+<head> <!-- Head é a Tag responsável por ajustar configurações do nosso documento que não são visíveis na página. O unico visível é o title-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
+    <meta charset="UTF-8">
+    <meta http-equiv = "">
+    <meta http-equiv = "X-UA-Compatible" content = "IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- content é o parametro que entende as dimensões do display onde está sendo exibida-->
+    <title>Abinha dos Crias</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+    <div id = "container">
+        <div id = "profile">
+            <img src="./assets/meu_avatar_light.svg" alt="Fotinha na praia papai, aiaiai uiui">
+            <p>@ramosmat</p>
+        </div>
+
+        <div id = "switch" onclick = "toggleMode()">
+            <button></button> <!--O button será o icone do botão. Será feito no CSS-->
+            <span></span> <!--O span vai ser a tag do tracking (forminha cilindrica que o icone desliza)-->
+        </div>
+
+        <ul> <!--tag para criar listas DESORDENADAS. Para listas ORDENADAS há o ol. A diferença é se terá pontinhos ou números nos indices-->
+            <li > <!--tag para criar listas-->
+                <a href="#">Inscrever-se no NLW</a> <!--tag para criar links-->
+            </li>
+
+            <li >
+                <a href="#">Baixar meu e-book</a>
+            </li>
+
+            <li >
+                <a href="https://github.com/ramosmat"
+                    target="_blank">Ver meu github</a>
+            </li>
+
+            <li >
+                <a href="https://bit.ly/matheusramosa"
+                    target="_blank">Ver meu portifólio PBI</a>
+            </li>
+
+        </ul>
+
+        <div id = "social_links">
+            <a href="https://github.com/ramosmat" target="_blank">
+                <ion-icon name="logo-github"></ion-icon>
+            </a>
+
+            <a href="https://instagram.com/ramosmat_?igshid=MzRlODBiNWFlZA==" target="_blank">
+                <ion-icon name="logo-instagram"></ion-icon>
+            </a>
+
+            <a href="#">
+                <ion-icon name="logo-youtube"></ion-icon>
+            </a>
+
+            <a href="https://www.linkedin.com/in/matheus-ramos-amaral-00880314b/" target="_blank">
+                <ion-icon name="logo-linkedin"></ion-icon>
+            </a>
+        </div>
+
+        <footer>
+            <p>Feito com <ion-icon name="heart"></ion-icon> por Matheus Ramos</p>
+        </footer>
+    </div>
+
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <script src = "./script.js"></script>
+
+</body>
+</html>

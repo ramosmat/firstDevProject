@@ -1,0 +1,206 @@
+* { /*O * é o seletor universal, ele seleciona todos os elementos*/
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*Definindo o pseudo-selector root, que é o estilo raiz*/
+:root{
+    --text-color: white; /*Cor dos textos. Usado no body*/
+    --bg-url: url(./assets/bg-mobile.jpg); /*Imagem do background*/
+    --stroke-color: rgba(255, 255, 255, 0.5); /*Cor da borda das caixinhas dos links. Usado no ul li a, #switch span*/
+    --surface-color:  rgba(255, 255, 255, 0.05); /*Cor do background das caixinhas dos links. Usado no ul li a, #switch span*/
+    --surface-color-hover: rgba(255, 255, 255, 0.15); /*Cor do background das caixinhas dos links. Usado no ul li a:hover*/
+    --highlight-color: rgba(255, 255, 255, 0.2); /*Cor do background dos icones das redes sociais. Usado no social_links a:hover*/
+    --switch-bg-url: url(./assets/moon-stars.svg); /*Icone do modo escuro e claro. Usado no #switch button*/
+}
+
+/*Definindo as propriedades que serão usadas no light mode. Basicamente definimos as mesmas variaveis do root. mas com valores do light*/
+.light{
+    --text-color: black;
+    --bg-url: url(./assets/bg-mobile-light.jpg);
+    --stroke-color: rgba(0, 0, 0, 0.5); 
+    --surface-color:  rgba(0, 0, 0, 0.05);
+    --surface-color-hover: rgba(0, 0, 0, 0.16);
+    --highlight-color: rgba(0, 0, 0, 0.1);
+    --switch-bg-url: url(./assets/sun.svg);
+}
+
+body {
+/*1. Podemos fazer a configuração no css de duas formas, linha a linha, especificando o que será
+feito em cada item, como na primeira parte no body*/
+
+    /*background-image: url(./assets/bg-mobile.jpg);
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+    */
+
+/*2. Ou podemos fazer um "shorthand" (atalho) para deixar tudo agrupado, desta forma o codigo
+fica mais limpo*/
+
+    /*O que estamos usando --> background: image repeat position/size*/
+
+    background: var(--bg-url) no-repeat top center/cover;
+}
+
+body *{ /*Aqui selecionamos tudo que está dentro do body*/
+    font-family: 'Inter', sans-serif;
+    /*color: white;*/
+    color: var(--text-color); /*Usando a variável no lugar da cor ditetamente */
+}
+
+/*Container*/
+#container{
+    margin: 56px auto 0px; /*Desta forma estamos aplicando 56px em cima, auto nas laterais e 0px embaixo*/
+
+    /*margin-right: auto; 
+    margin-left: auto; A margem é usada para alinhar um conteúdo que tenha dimens~eos fixas no espaço da pagina*/
+
+    width: 360px;
+    /*height: 712px; No CSS, GERALMENTE não definimos a altura, ela se ajusta de acordo com o conteúdo da caixa*/;
+
+    padding: 0 24px;
+}
+
+/*-----------------------------------------------------------------------------------------------------------------------*/
+/*Profile*/
+#profile{
+    text-align: center;
+    padding: 24px;
+}
+
+#profile img{
+    /*display: block; Elementos que tem o disply por padrão inline permitem que o pai dele (elemento profile acima) tenham o atributo text-align*/
+    width: 112px;
+    margin: auto;
+
+}
+
+#profile p{
+    font-weight: 500;
+    line-height: 24px;
+    margin-top: 8px;
+}
+
+/*-----------------------------------------------------------------------------------------------------------------------*/
+/*Switch*/
+#switch{
+/*O position libera que usemos outras propriedades para navegar em qualquer posição da página, como top, left, etc. O valor relative faz com
+que outros positions do elemento, como o do button, sejam relativos ao position deste seletor switch*/
+    position: relative;
+    width: 64px;
+
+    margin: 4px auto;
+}
+
+/*Icone*/
+#switch button{
+    width: 32px;
+    height: 32px;
+
+    background: white var(--switch-bg-url) no-repeat center;
+    border: 0;
+    border-radius: 50%;
+
+    /*Iniciando a sobreposição do icone e da barra de tracking*/
+    position: absolute; /*Faz com que haja a sobreposição de camadas.*/
+    z-index: 1;
+    transform: translateY(-50%);
+    top: 50%;
+    left: 0;
+}
+
+.light #switch button{
+    right: 0;
+    left: initial;
+}
+
+/*Tacking*/
+#switch span{
+    display: block;
+
+    width: 64px;
+    height: 24px;
+
+    background: var(--surface-color);
+    border: 1px solid var(--stroke-color);
+    backdrop-filter: blur(4px);
+
+    border-radius: 999px;
+}
+
+
+/*-----------------------------------------------------------------------------------------------------------------------*/
+/*Links - Lista desordenada*/
+ul{
+    list-style: none; /*Remove os pontinhos de sumário à esqueda da lista (se fosse lista ordenada, tiraria os numeros)*/
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    padding: 16px 0;
+}
+
+ul li a{
+    border: 1px solid var(--stroke-color);
+    border-radius: 8px;
+    background: var(--surface-color);
+    backdrop-filter: blur(4px);
+
+    display: flex;
+    justify-content: center;
+
+    padding: 16px 24px;
+
+    text-decoration: none; /*Removendo o sublinhado do texto*/
+    font-weight: 500;
+
+    transition: background 0.5s; /*Parâmetro de transição de estilização, trabalha junto com o :hover abaixo*/
+}
+
+/*:hover é um pseudo-selector, ou seja, ele irá aplicar estilização apenas passando o mouse por cima do elemento*/
+ul li a:hover{
+    border: 1.5px solid var(--text-color);
+    background: var(--surface-color-hover);
+}
+
+/*-----------------------------------------------------------------------------------------------------------------------*/
+/*Social Links*/
+#social_links{
+    padding: 24px 0;
+
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+
+    justify-content: center;
+
+    font-size: 24px;
+}
+
+#social_links a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+
+    transition: background 0.2s;
+    border-radius: 50%;
+}
+
+#social_links a:hover{
+    background: var(--highlight-color);
+}
+
+/*-----------------------------------------------------------------------------------------------------------------------*/
+/*Footer*/
+footer{
+    padding: 24px;
+
+    display: block;
+    flex-direction: column;
+
+    text-align: center;
+    font-size: 14px;
+}
