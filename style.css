@@ -42,6 +42,7 @@ fica mais limpo*/
     /*O que estamos usando --> background: image repeat position/size*/
 
     background: var(--bg-url) no-repeat top center/cover;
+    height: 100vh; /*Definindo a altura para 100 do ViewPort*/
 }
 
 body *{ /*Aqui selecionamos tudo que está dentro do body*/
@@ -204,4 +205,20 @@ footer{
 
     text-align: center;
     font-size: 14px;
+}
+
+/*-----------------------------------------------------------------------------------------------------------------------*/
+/*Media Queries*/
+/*Sempre que algo for chamado com @ é uma "at rule"*/
+/* É um recurso do CSS que visa facilitar o processo de configuração e renderização dos elementos de um site
+em diferentes tamanhos de tela. Só funcionam quando há a tag de meta com atributo name = "viewport" no arquivo .html*/
+
+@media (min-width: 700px){
+    :root{
+        --bg-url: url(./assets/bg-desktop.jpg);
+    }
+
+    .light{
+        --bg-url: url(./assets/bg-desktop-light.jpg);
+    }
 }
