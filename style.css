@@ -111,6 +111,8 @@ que outros positions do elemento, como o do button, sejam relativos ao position 
     transform: translateY(-50%);
     top: 50%;
     left: 0;
+
+    animation: TrackVolta 0.4s;
 }
 
 .light #switch button{
@@ -227,7 +229,9 @@ em diferentes tamanhos de tela. Só funcionam quando há a tag de meta com atrib
 
 
 /*Animações*/
-/*Fazendo isso tambem temos que mudar o seletor .light #switch button{}*/
+/*Adicionando animação de ida para modo light. Tambem temos que mudar o seletor .light #switch button{}*/
+
+/**/
 @keyframes TrackIda{
     from{
         left: 0;    /*Definindo onde a bolinha vai começar*/
@@ -235,4 +239,14 @@ em diferentes tamanhos de tela. Só funcionam quando há a tag de meta com atrib
     to{
         left: 50%;  /*Definindo onde a bolinha vai terminar*/
     } 
+}
+
+/*Adicionando animação de volta para modo dark. Tambem temos que mudar o seletor #switch button{}*/
+@keyframes TrackVolta{
+    from{
+        left: 50%;
+    }
+    to{
+        left: 0;
+    }
 }
