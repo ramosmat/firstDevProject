@@ -57,7 +57,8 @@ body *{ /*Aqui selecionamos tudo que está dentro do body*/
     /*margin-right: auto; 
     margin-left: auto; A margem é usada para alinhar um conteúdo que tenha dimens~eos fixas no espaço da pagina*/
 
-    width: 360px;
+    width: 100%;
+    max-width: 588px
     /*height: 712px; No CSS, GERALMENTE não definimos a altura, ela se ajusta de acordo com o conteúdo da caixa*/;
 
     padding: 0 24px;
