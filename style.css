@@ -114,8 +114,11 @@ que outros positions do elemento, como o do button, sejam relativos ao position 
 }
 
 .light #switch button{
-    right: 0;
-    left: initial;
+    /*right: 0;
+    left: initial;*/
+
+/*Chamando o @keyframes e o tempo que ela vai demorar pra ser finalizada. O forwards serve para manter as propriedades finais do @keyframes, o to*/
+    animation: TrackIda 0.4s forwards;
 }
 
 /*Tacking*/
@@ -212,7 +215,6 @@ footer{
 /*Sempre que algo for chamado com @ é uma "at rule"*/
 /* É um recurso do CSS que visa facilitar o processo de configuração e renderização dos elementos de um site
 em diferentes tamanhos de tela. Só funcionam quando há a tag de meta com atributo name = "viewport" no arquivo .html*/
-
 @media (min-width: 700px){
     :root{
         --bg-url: url(./assets/bg-desktop.jpg);
@@ -221,4 +223,16 @@ em diferentes tamanhos de tela. Só funcionam quando há a tag de meta com atrib
     .light{
         --bg-url: url(./assets/bg-desktop-light.jpg);
     }
+}
+
+
+/*Animações*/
+/*Fazendo isso tambem temos que mudar o seletor .light #switch button{}*/
+@keyframes TrackIda{
+    from{
+        left: 0;    /*Definindo onde a bolinha vai começar*/
+    } 
+    to{
+        left: 50%;  /*Definindo onde a bolinha vai terminar*/
+    } 
 }
