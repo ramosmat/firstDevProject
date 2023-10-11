@@ -123,6 +123,10 @@ que outros positions do elemento, como o do button, sejam relativos ao position 
     animation: TrackIda 0.4s forwards;
 }
 
+#switch button:hover{
+    outline: 8px solid var(--highlight-color);
+}
+
 /*Tacking*/
 #switch span{
     display: block;
