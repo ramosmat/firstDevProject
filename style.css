@@ -56,7 +56,7 @@ body *{ /*Aqui selecionamos tudo que está dentro do body*/
     margin: 56px auto 0px; /*Desta forma estamos aplicando 56px em cima, auto nas laterais e 0px embaixo*/
 
     /*margin-right: auto; 
-    margin-left: auto; A margem é usada para alinhar um conteúdo que tenha dimens~eos fixas no espaço da pagina*/
+    margin-left: auto; A margem é usada para alinhar um conteúdo que tenha dimensões fixas no espaço da pagina*/
 
     width: 100%;
     max-width: 588px
